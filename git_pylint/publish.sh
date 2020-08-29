@@ -1,0 +1,1 @@
+docker push vcoder/git_pylint:$1

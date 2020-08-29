@@ -3,7 +3,8 @@ import re
 
 import git
 
-from git_pylint import sysutils
+import sysutils
+
 
 EMPTY_TREE = git.Git().hash_object('/dev/null', t='tree')
 
@@ -85,7 +86,7 @@ def get_diffs(repo, a_tree, b_tree, ignore_names, ignore_patterns):
         diff
         for diff in diff_index
         if diff.b_blob
-           and sysutils.is_python_file(diff.b_path)
-           and diff.a_blob != diff.b_blob
-           and not sysutils.is_ignored(os.path.basename(diff.b_path), ignore_names, ignore_patterns)
+        and sysutils.is_python_file(diff.b_path)
+        and diff.a_blob != diff.b_blob
+        and not sysutils.is_ignored(os.path.basename(diff.b_path), ignore_names, ignore_patterns)
     ]

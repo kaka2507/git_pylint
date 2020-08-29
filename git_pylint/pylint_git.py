@@ -119,7 +119,7 @@ def main():
     ci_server = os.getenv('CI_SERVER') == 'yes'
     repo_dir = os.getcwd()
     repo = git.Repo(repo_dir)
-    rcfile = os.path.join(os.getenv('HOME'), 'pylint.conf')
+    rcfile = '/root/pylint.conf'
     rcfile = sysutils.extract_option(args, ['--rcfile'], rcfile)
     args = ['--rcfile', rcfile] + args
     config = configparser.ConfigParser()
