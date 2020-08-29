@@ -1,0 +1,8 @@
+# Git Pylint Github Action
+Support to run Pylint on python projects
+ 
+# Usage
+```shell script
+- name: Python Pylin GitHub Action
+  uses: vcoder4c/git_pylint
+```
