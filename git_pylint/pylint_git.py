@@ -14,7 +14,10 @@ from pylint import lint
 from pylint.reporters.json import JSONReporter
 from pylint.utils import MSG_TYPES_STATUS
 
-from git_pylint import diffutils, reporter, sysutils
+import diffutils
+import sysutils
+import reporter
+
 
 DEFAULT_TARGET_BRANCH = 'master'
 DIFF_MODE_FILE = 'file'
@@ -116,7 +119,7 @@ def main():
     ci_server = os.getenv('CI_SERVER') == 'yes'
     repo_dir = os.getcwd()
     repo = git.Repo(repo_dir)
-    rcfile = os.path.join('/root/', 'pylint.conf')
+    rcfile = os.path.join(os.getenv('HOME'), 'pylint.conf')
     rcfile = sysutils.extract_option(args, ['--rcfile'], rcfile)
     args = ['--rcfile', rcfile] + args
     config = configparser.ConfigParser()
