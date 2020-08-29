@@ -1,5 +1,5 @@
 name: Git Pylint Github Action
-description: 'Git Pylint Github Action running on python slim docker image'
+description: 'Run Pylint on PR change files only'
 branding:
   icon: box
   color: gray-dark
@@ -11,5 +11,3 @@ steps:
 - uses: actions/checkout@master
 - name: Git Pylint Github Action
   uses: vcoder4c/git_pylint@master
-  with:
-    args: pylint --help
