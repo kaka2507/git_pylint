@@ -4,7 +4,7 @@ Support to run Pylint on python projects
 # Usage
 ```shell script
 - name: Python Pylin GitHub Action
-  uses: vcoder4c/git_pylint@v1
+  uses: vcoder4c/git_pylint@v3
   env:
     DEFAULT_TARGET_BRANCH: master
 ```
